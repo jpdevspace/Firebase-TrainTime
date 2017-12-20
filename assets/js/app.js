@@ -11,8 +11,10 @@ $(function(){
     };
     firebase.initializeApp(config);
 
-    // Reference Firebase DB
+    // Hold the db in a variable
     const db = firebase.database();
+    // Reference Database
+    const dbRef = db.ref();
 
     // Get the elements
     const $tName = $('#name');
@@ -20,6 +22,7 @@ $(function(){
     const $tFirstTime = $('#firstTrainTime');
     const $tFreq = $('#frequency');
     const $submit = $('#formFill');
+    const $tbody = $('tbody');
     let trainObj = {};
 
     // Functions
@@ -31,10 +34,30 @@ $(function(){
         trainObj.tDest = $tDest.val();
         trainObj.tFirstTime = $tFirstTime.val();
         trainObj.tFreq = $tFreq.val();
+        // Clear inputs
+        $tName.val('');
+        $tDest.val('');
+        $tFirstTime.val('');
+        $tFreq.val('');
         // Put it into Firebase
-        db.ref().set(trainObj);
+        db.ref().push(trainObj);
     }
-    
+
+    // Listen for changes in the database
+    dbRef.on('child_added', (snapshot) => {
+        console.log(snapshot.val());
+        // Fill the table
+        $tbody.append(`
+            <tr>
+                <td>${snapshot.val().tName}</td>
+                <td>${snapshot.val().tDest}</td>
+                <td>${snapshot.val().tFirstTime}</td>
+                <td>${snapshot.val().tFreq}</td>
+            </tr>`);
+    })
+
+
+
     // Event Listener
     $submit.on('click', getValues);
 
