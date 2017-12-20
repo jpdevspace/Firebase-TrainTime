@@ -4,11 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap v4 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!-- Own stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Train Time</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-3">JP's awesom-est train schedule</h1>
+            <p class="lead">It's cho-cho time, let's cho</p>
+            <hr class="my-4">
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Current Times for Trains
+            </div>
+            <div class="card-body">
+
+                    <table class="table table-hover">
+                            <thead>
+                              <tr>
+                                <th scope="col">Train</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Freq in minutes</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Mins away</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Midnight Cho</td>
+                                <td>Cho Town</td>
+                                <td>5</td>
+                                <td>11:15</td>
+                                <td>2</td>
+                              </tr>
+                              <tr>
+                                <td>Midnight Cho</td>
+                                <td>Cho Town</td>
+                                <td>5</td>
+                                <td>11:15</td>
+                                <td>2</td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+            </div>
+        </div>
+
+    </div>
 
 <!-- jQuery CDN -->
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
