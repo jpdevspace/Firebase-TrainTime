@@ -1,5 +1,5 @@
 $(function(){
-    console.log('Working!');
+
     // Initialize Firebase
     const config = {
         apiKey: "AIzaSyCn6bxidmbH6601u0islr5_xyteVr41dLI",
@@ -19,6 +19,24 @@ $(function(){
     const $tDest = $('#destination');
     const $tFirstTime = $('#firstTrainTime');
     const $tFreq = $('#frequency');
+    const $submit = $('#formFill');
+    let trainObj = {};
+
+    // Functions
+    const getValues = (e) => {
+        e.preventDefault();
+        // Push values into an obj
+
+        trainObj.tName = $tName.val();
+        trainObj.tDest = $tDest.val();
+        trainObj.tFirstTime = $tFirstTime.val();
+        trainObj.tFreq = $tFreq.val();
+        // Put it into Firebase
+        db.ref().set(trainObj);
+    }
+    
+    // Event Listener
+    $submit.on('click', getValues);
 
 
 
