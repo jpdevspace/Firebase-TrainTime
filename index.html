@@ -11,15 +11,15 @@
     <title>Train Time</title>
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron">
+    <div class="container my-4">
+        <div class="jumbotron text-center">
             <h1 class="display-3">JP's awesom-est train schedule</h1>
-            <p class="lead">It's cho-cho time, let's cho</p>
+            <p class="lead">It's choo-choo time, let's choo</p>
             <hr class="my-4">
         </div>
 
         <div class="card">
-            <div class="card-header">
+            <div class="card-header text-center">
                 Current Times for Trains
             </div>
             <div class="card-body">
@@ -34,29 +34,13 @@
                         <th scope="col">Mins away</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                        <td>Midnight Cho</td>
-                        <td>Cho Town</td>
-                        <td>5</td>
-                        <td>11:15</td>
-                        <td>2</td>
-                        </tr>
-                        <tr>
-                        <td>Midnight Cho</td>
-                        <td>Cho Town</td>
-                        <td>5</td>
-                        <td>11:15</td>
-                        <td>2</td>
-                        </tr>
-
-                    </tbody>
+                    <tbody></tbody>
                 </table>
             </div>
         </div>
         <br>
         <div class="card">
-            <div class="card-header">
+            <div class="card-header text-center">
                 Enter your train info
             </div>
             <div class="card-body">
@@ -70,15 +54,15 @@
                         <input type="text" class="form-control" id="destination" placeholder="Enter destination">
                     </div>
                     <div class="form-group">
-                        <label for="firstTrainTime">First Train Time</label>
+                        <label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
                         <input type="number" class="form-control" id="firstTrainTime" placeholder="Enter first train time">
                     </div>
                     <div class="form-group">
-                        <label for="frequency">Frequency</label>
+                        <label for="frequency">Frequency (mins)</label>
                         <input type="number" class="form-control" id="frequency" placeholder="Enter Frequency">
                     </div>
 
-                    <button id="formFill" type="submit" class="btn btn-primary">Submit</button>
+                    <button id="formFill" type="submit" class="btn btn-dark">Submit</button>
                 </form>
             </div>
         </div>
